@@ -1,0 +1,160 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container">
+    <div class="row pt-5 pb-5">
+        <div class="col-md-1">
+            <button onclick="viewAllRecord()" " class="btn btn-primary">All Camera</button>
+        </div>
+        <div class="col-md-1">
+            <button onclick="dellData()" class="btn btn-primary">DELL</button>
+        </div>
+        <div class="col-md-1">
+            <button onclick="hpData()" class="btn btn-primary">HP</button>
+        </div>
+        <div class="col-md-1">
+            <button onclick="lenovoData()" class="btn btn-primary">Lenovo</button>
+        </div>
+        <div class="col-md-1">
+            <button onclick="asusData()" class="btn btn-primary">Asus</button>
+        </div>
+    </div>
+
+    <div class="row" id="allrecord">
+        
+    </div>
+
+</div>
+<script type="text/javascript">
+    
+    let data = [
+        {
+            name : "XPS 13 2-in-1 Laptop",
+            price : 144989.99,
+            image : "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-13-9315-2in1/media-gallery/blue/tablet-xps-13-9315-blue-gallery-10.psd?fmt=png-alpha&pscan=auto&scl=1&wid=4465&hei=2394&qlt=100,1&resMode=sharp2&size=4465,2394&chrss=full&imwidth=5000",
+            category : "deel"
+        },
+        {
+            name : "Vostro 3510 Laptop",
+            price : 39789.98,
+            image : "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/vostro-notebooks/15-3510/media-gallery/archive/dv3510nt_cnb_05000ff090_gy.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=606&qlt=100,1&resMode=sharp2&size=606,402&chrss=full",
+            category : "deel"
+        },
+        {
+            name : "Dell Vostro 3420 Laptop",
+            price : 53990,
+            image : "https://m.media-amazon.com/images/I/41fecgQP5UL._SX300_SY300_QL70_FMwebp_.jpg",
+            category : "deel"
+        },
+        {
+            name : "DELL Precision 5540 Laptop",
+            price : 74990,
+            image : "https://m.media-amazon.com/images/I/71Xl4zbr1OL._SX679_.jpg",
+            category : "deel"
+        },
+        {
+            name : "HP 15s",
+            price : 53490,
+            image : "https://m.media-amazon.com/images/I/71y-nJm3NiL._SX522_.jpg",
+            category : "hp"
+        },
+
+        {
+            name : "HP Envy 13 X360",
+            price : 79990,
+            image : "https://m.media-amazon.com/images/I/51Otsu9qo3L._SX522_.jpg",
+            category : "hp"
+        },
+        {
+            name : "HP Omen AMD Ryzen 6800H",
+            price : 134990,
+            image : "https://m.media-amazon.com/images/I/51N3ApcosfL._SX300_SY300_QL70_FMwebp_.jpg",
+            category : "hp"
+        },
+        {
+            name : "HP Firefly 15 G8 Intel Core i7-1165U",
+            price : 163990,
+            image : "https://m.media-amazon.com/images/I/41MsZCJHKcL._SX300_SY300_QL70_FMwebp_.jpg",
+            category : "hp"
+        },
+        {
+            name : "HP Pavilion Aero AMD Ryzen 5 7535U",
+            price : 69990,
+            image : "https://m.media-amazon.com/images/I/718DuNiO7YL._SX522_.jpg",
+            category : "hp"
+        },
+        {
+            name : "HP Chromebook 11a",
+            price : 22490,
+            image : "https://m.media-amazon.com/images/I/41vPVaFL41L._SX300_SY300_QL70_FMwebp_.jpg",
+            category : "hp"
+        },
+        {
+            name : "Lenovo Yoga Slim 7 Pro Intel Evo Core i5-11320H",
+            price : 69790,
+            image : "https://m.media-amazon.com/images/I/41xBwhyZ-0L._SY300_SX300_QL70_FMwebp_.jpg",
+            category : "lenovo"
+        },
+        {
+            name : "Lenovo ThinkBook 15 AMD Ryzen 5 5500U",
+            price : 45490,
+            image : "https://m.media-amazon.com/images/I/61Dh8r-jRHL._SX522_.jpg",
+            category : "lenovo"
+        },
+        {
+            name : "Lenovo ThinkPad E14 Intel Core i5 12th",
+            price : 70990,
+            image : "https://m.media-amazon.com/images/I/51RFTKgvDAL._SX522_.jpg",
+            category : "lenovo"
+        },
+        {
+            name : "Lenovo Legion 5 AMD Ryzen 7 5800H",
+            price : 131990,
+            image : "https://m.media-amazon.com/images/I/61Er61SxBhL._SX522_.jpg",
+            category : "lenovo"
+        },
+        {
+            name : "Lenovo IdeaPad 3 11th Gen Intel Core i3",
+            price : 37500,
+            image : "https://m.media-amazon.com/images/I/41JjuxRygHL._SX300_SY300_QL70_FMwebp_.jpg",
+            category : "lenovo"
+        },
+        {
+            name : "ASUS Vivobook S 15 OLED (2023)",
+            price : 111990,
+            image : "https://m.media-amazon.com/images/I/41bfbI6pKoL._SX300_SY300_QL70_FMwebp_.jpg",
+            category : "asus"
+        },
+        {
+            name : "ASUS Eeebook 14",
+            price : 24480,
+            image : "https://m.media-amazon.com/images/I/31CPKhK0BVL._SY300_SX300_QL70_FMwebp_.jpg",
+            category : "asus"
+        },
+        {
+            name : "ASUS TUF Gaming A15",
+            price : 53990,
+            image : "https://m.media-amazon.com/images/I/41LDfnScXZS._SX300_SY300_QL70_FMwebp_.jpg",
+            category : "asus"
+        },      
+        {
+            name : "ASUS ROG Strix G17",
+            price : 85990,
+            image : "https://m.media-amazon.com/images/I/41ZN0vVuyUL._SY300_SX300_QL70_FMwebp_.jpg",
+            category : "asus"
+        },
+        {
+            name : "ASUS Vivobook Pro 15",
+            price : 65990,
+            image : "https://m.media-amazon.com/images/I/41JQ61eFxjL._SX300_SY300_QL70_FMwebp_.jpg",
+            category : "asus"
+        },  
+        {
+            name : "ASUS Vivobook Pro 16",
+            price : 83990,
+            image : "https://m.media-amazon.com/images/I/71K5aPh5uxL._SX522_.jpg",
+            category : "asus"
+        },
+    ];
+
+
+</script>
